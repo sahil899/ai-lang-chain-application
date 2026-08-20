@@ -23,6 +23,7 @@ async function connectToVectorStore() {
 async function getVectorStoreObj() {
   const embeddings = new GoogleGenerativeAIEmbeddings({
     model: "gemini-embedding-001",
+    apiKey: process.env.GOOGLE_API_KEY,
   });
 
   const weaviateClient = await connectToVectorStore();
